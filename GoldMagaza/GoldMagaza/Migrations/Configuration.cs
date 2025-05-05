@@ -1,18 +1,18 @@
-﻿namespace eTicaret.Migrations
+﻿namespace GoldMagaza.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<eTicaret.Models.ETicaretContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GoldMagaza.Models.VeritabaniContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(eTicaret.Models.ETicaretContext context)
+        protected override void Seed(GoldMagaza.Models.VeritabaniContext context)
         {
             //  This method will be called after migrating to the latest version.
 

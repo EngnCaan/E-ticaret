@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace eTicaret.Controllers
+namespace GoldMagaza.Controllers
 {
     public class HomeController : Controller
     {

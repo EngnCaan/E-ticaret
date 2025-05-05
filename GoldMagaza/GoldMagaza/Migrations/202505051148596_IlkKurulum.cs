@@ -1,9 +1,9 @@
-﻿namespace eTicaret.Migrations
+﻿namespace GoldMagaza.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class IlkOlusturma : DbMigration
+    public partial class IlkKurulum : DbMigration
     {
         public override void Up()
         {
