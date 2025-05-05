@@ -1,0 +1,32 @@
+﻿@model GoldMagaza.Models.Urun
+
+@{
+    ViewBag.Title = "Ürün Ekle";
+}
+
+<h2>Yeni Ürün Ekle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Ad)
+    @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.Fiyat)
+    @Html.TextBoxFor(m => m.Fiyat, new { @class = "form-control" })
+
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(m => m.KategoriId, (SelectList)ViewBag.Kategoriler, "Seçiniz", new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.ResimYolu)
+    @Html.TextBoxFor(m => m.ResimYolu, new { @class = "form-control" })
+
+    <br />
+    <input type="submit" value="Ürün Ekle" class="btn btn-success" />
+}
+
+@if (ViewBag.Basari != null)
+{
+    <div class="alert alert-success mt-2">
+        @ViewBag.Basari
+    </div>
+}
