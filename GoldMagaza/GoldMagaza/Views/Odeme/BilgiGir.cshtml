@@ -1,0 +1,31 @@
+﻿@model GoldMagaza.Models.OdemeBilgisi
+@{
+    ViewBag.Title = "Ödeme Bilgileri";
+}
+
+<h2>Ödeme Bilgilerini Girin</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.KartNumarasi)
+        @Html.TextBoxFor(m => m.KartNumarasi, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SonKullanmaTarihi)
+        @Html.TextBoxFor(m => m.SonKullanmaTarihi, new { @class = "form-control", placeholder = "AA/YY" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CVV)
+        @Html.TextBoxFor(m => m.CVV, new { @class = "form-control" })
+    </div>
+
+    <div class="form-check">
+        <label class="form-check-label">
+            @Html.CheckBox("bilgileriKaydet", false, new { @class = "form-check-input" }) Kart bilgilerimi kaydet
+        </label>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Ödeme Yap ve Siparişi Onayla</button>
+}
