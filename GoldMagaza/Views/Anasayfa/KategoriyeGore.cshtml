@@ -1,0 +1,48 @@
+﻿@model List<GoldMagaza.Models.Urun>
+@{
+    ViewBag.Title = "Kategori - " + ViewBag.Kategori;
+}
+
+<h2 class="mb-4 text-center text-dark">📂 @ViewBag.Kategori</h2>
+
+<style>
+    .image-wrapper {
+        height: 220px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f9f9;
+    }
+
+    .image-wrapper img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+</style>
+
+<div class="row">
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="image-wrapper">
+                    <img src="@Url.Content(urun.ResimYolu)" alt="@urun.Ad" class="card-img-top" />
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-primary">@urun.Ad</h5>
+                    <p class="card-text text-success fw-bold">@urun.Fiyat ₺</p>
+                    <p class="card-text mb-2">
+                        <span class="badge bg-secondary">@urun.Kategori.Ad</span>
+                    </p>
+
+                    <div class="mt-auto">
+                        <a href="/Anasayfa/Detay/@urun.Id" class="btn btn-outline-primary btn-sm w-100 mb-2">🔍 Detay</a>
+                        <a href="/Anasayfa/SepeteEkle/@urun.Id" class="btn btn-success btn-sm w-100">🛒 Sepete Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

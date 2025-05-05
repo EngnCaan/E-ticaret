@@ -1,0 +1,16 @@
+﻿@model List<GoldMagaza.Models.Kategori>
+
+@{
+    ViewBag.Title = "Kategoriler";
+}
+
+<h2>Kategoriler</h2>
+
+<div class="list-group">
+    @foreach (var kategori in Model)
+    {
+        <a href="/Anasayfa/KategoriyeGore/@kategori.Id" class="list-group-item list-group-item-action">
+            @kategori.Ad
+        </a>
+    }
+</div>
