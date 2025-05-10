@@ -219,6 +219,7 @@
     <Content Include="Views\Yonetim\UrunEkle.cshtml" />
     <Content Include="Views\Yonetim\KategoriEkle.cshtml" />
     <Content Include="Views\Yonetim\KategoriListele.cshtml" />
+    <Content Include="Views\Yonetim\TumSiparisler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

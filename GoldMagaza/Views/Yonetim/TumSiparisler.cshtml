@@ -1,0 +1,29 @@
+﻿@model List<GoldMagaza.Models.Siparis>
+
+@{
+    ViewBag.Title = "Tüm Siparişler";
+}
+
+<h2>Tüm Siparişler</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sipariş No</th>
+            <th>Kullanıcı ID</th>
+            <th>Tarih</th>
+            <th>Toplam Tutar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var siparis in Model)
+        {
+            <tr>
+                <td>@siparis.Id</td>
+                <td>@siparis.KullaniciId</td>
+                <td>@siparis.Tarih.ToShortDateString()</td>
+                <td>@siparis.ToplamTutar ₺</td>
+            </tr>
+        }
+    </tbody>
+</table>
