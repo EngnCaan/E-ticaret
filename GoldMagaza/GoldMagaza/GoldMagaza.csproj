@@ -127,7 +127,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnasayfaController.cs" />
+    <Compile Include="Controllers\HataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\OdemeController.cs" />
+    <Compile Include="Controllers\YonetimController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,6 +201,22 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Hata\YetkisizErisim.cshtml" />
+    <Content Include="Views\Anasayfa\Detay.cshtml" />
+    <Content Include="Views\Anasayfa\Index.cshtml" />
+    <Content Include="Views\Anasayfa\Kategori.cshtml" />
+    <Content Include="Views\Anasayfa\KategoriyeGore.cshtml" />
+    <Content Include="Views\Anasayfa\Odeme.cshtml" />
+    <Content Include="Views\Anasayfa\OdemeTamamlandı.cshtml" />
+    <Content Include="Views\Anasayfa\Sepet.cshtml" />
+    <Content Include="Views\Anasayfa\Siparislerim.cshtml" />
+    <Content Include="Views\Kullanici\Giris.cshtml" />
+    <Content Include="Views\Kullanici\Profil.cshtml" />
+    <Content Include="Views\Odeme\BilgiGir.cshtml" />
+    <Content Include="Views\Yonetim\Index.cshtml" />
+    <Content Include="Views\Kullanici\Kayit.cshtml" />
+    <Content Include="Views\Yonetim\Kategoriler.cshtml" />
+    <Content Include="Views\Yonetim\UrunEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

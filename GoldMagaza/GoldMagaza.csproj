@@ -218,6 +218,7 @@
     <Content Include="Views\Yonetim\Kategoriler.cshtml" />
     <Content Include="Views\Yonetim\UrunEkle.cshtml" />
     <Content Include="Views\Yonetim\KategoriEkle.cshtml" />
+    <Content Include="Views\Yonetim\KategoriListele.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
