@@ -130,6 +130,9 @@
     <Compile Include="Controllers\AnasayfaController.cs" />
     <Compile Include="Controllers\HataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\OdemeController.cs" />
+    <Compile Include="Controllers\YonetimController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,6 +210,14 @@
     <Content Include="Views\Anasayfa\OdemeTamamlandı.cshtml" />
     <Content Include="Views\Anasayfa\Sepet.cshtml" />
     <Content Include="Views\Anasayfa\Siparislerim.cshtml" />
+    <Content Include="Views\Kullanici\Giris.cshtml" />
+    <Content Include="Views\Kullanici\Profil.cshtml" />
+    <Content Include="Views\Odeme\BilgiGir.cshtml" />
+    <Content Include="Views\Yonetim\Index.cshtml" />
+    <Content Include="Views\Kullanici\Kayit.cshtml" />
+    <Content Include="Views\Yonetim\Kategoriler.cshtml" />
+    <Content Include="Views\Yonetim\UrunEkle.cshtml" />
+    <Content Include="Views\Yonetim\KategoriEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

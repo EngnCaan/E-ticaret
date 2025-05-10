@@ -1,0 +1,21 @@
+﻿@model GoldMagaza.Models.Kategori
+
+@{
+    ViewBag.Title = "Kategori Ekle";
+}
+
+<h2>Yeni Kategori Ekle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Ad)
+    @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+
+    <br />
+    <input type="submit" value="Ekle" class="btn btn-success" />
+}
+
+@if (ViewBag.Basari != null)
+{
+    <div class="alert alert-success mt-2">@ViewBag.Basari</div>
+}

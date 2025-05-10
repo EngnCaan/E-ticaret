@@ -1,0 +1,48 @@
+﻿@model GoldMagaza.Models.Kullanici
+@{
+    ViewBag.Title = "Kayıt Ol";
+}
+
+<h2 class="mb-4">📝 Kayıt Ol</h2>
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState.Values.Any(v => v.Errors.Count > 0))
+{
+    <div class="alert alert-danger">
+        Lütfen formda yer alan hataları düzeltin.
+    </div>
+}
+
+@using (Html.BeginForm("Kayit", "Kullanici", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken()
+
+    @* Rol bilgisi varsayılan olarak "Kullanici" olsun *@
+    @Html.HiddenFor(m => m.Rol, new { @Value = "Kullanici" })
+
+    @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" })
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.AdSoyad)
+        @Html.TextBoxFor(m => m.AdSoyad, new { @class = "form-control", placeholder = "Ad Soyad", required = "required" })
+        @Html.ValidationMessageFor(m => m.AdSoyad, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.Eposta)
+        @Html.TextBoxFor(m => m.Eposta, new { @class = "form-control", placeholder = "E-posta", type = "email", required = "required" })
+        @Html.ValidationMessageFor(m => m.Eposta, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.Sifre)
+        @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", placeholder = "Şifre", required = "required" })
+        @Html.ValidationMessageFor(m => m.Sifre, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+    <a href="/Kullanici/Giris" class="btn btn-link">Zaten hesabınız var mı?</a>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
