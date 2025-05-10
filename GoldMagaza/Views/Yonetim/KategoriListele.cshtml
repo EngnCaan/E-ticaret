@@ -1,0 +1,40 @@
+﻿@model List<GoldMagaza.Models.Kategori>
+
+@{
+    ViewBag.Title = "Kategori Listesi";
+}
+
+<h2 class="mb-4">📁 Kategori Listesi</h2>
+
+<a href="/Yonetim/KategoriEkle" class="btn btn-primary mb-3">➕ Yeni Kategori Ekle</a>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Henüz kategori eklenmemiş.</div>
+}
+else
+{
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Ad</th>
+                <th style="width:150px;">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kategori in Model)
+            {
+                <tr>
+                    <td>@kategori.Id</td>
+                    <td>@kategori.Ad</td>
+                    <td>
+                        @* Eğer düzenleme/silme aktifse burada linkler eklenebilir *@
+                        <a href="/Yonetim/KategoriSil/@kategori.Id" class="btn btn-sm btn-danger"
+                           onclick="return confirm('Bu kategoriyi silmek istediğinizden emin misiniz?');">🗑️ Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
