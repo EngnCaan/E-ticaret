@@ -1,0 +1,45 @@
+﻿@model List<GoldMagaza.Models.Urun>
+
+@{
+    ViewBag.Title = "Ürün Listesi";
+}
+
+<h2 class="mb-4">📦 Ürün Listesi</h2>
+
+<a href="/Yonetim/UrunEkle" class="btn btn-primary mb-3">➕ Yeni Ürün Ekle</a>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Sistemde kayıtlı ürün bulunmamaktadır.</div>
+}
+else
+{
+    <table class="table table-striped table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Ad</th>
+                <th>Kategori</th>
+                <th>Fiyat</th>
+                <th>Resim</th>
+                <th style="width: 180px;">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var urun in Model)
+            {
+                <tr>
+                    <td>@urun.Ad</td>
+                    <td>@urun.Kategori.Ad</td>
+                    <td class="text-success fw-bold">@urun.Fiyat ₺</td>
+                    <td>
+                        <img src="@Url.Content(urun.ResimYolu)" width="80" class="img-thumbnail" />
+                    </td>
+                    <td>
+                        <a href="/Yonetim/UrunDuzenle/@urun.Id" class="btn btn-sm btn-warning">✏️ Düzenle</a>
+                        <a href="/Yonetim/UrunSil/@urun.Id" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?');">🗑️ Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

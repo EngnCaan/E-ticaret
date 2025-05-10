@@ -1,0 +1,27 @@
+﻿@model GoldMagaza.Models.Urun
+
+@{
+    ViewBag.Title = "Ürün Düzenle";
+}
+
+<h2>Ürün Düzenle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+
+    @Html.LabelFor(m => m.Ad)
+    @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.Fiyat)
+    @Html.TextBoxFor(m => m.Fiyat, new { @class = "form-control" })
+
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(m => m.KategoriId, (SelectList)ViewBag.Kategoriler, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.ResimYolu)
+    @Html.TextBoxFor(m => m.ResimYolu, new { @class = "form-control" })
+
+    <br />
+    <input type="submit" value="Kaydet" class="btn btn-primary" />
+}
